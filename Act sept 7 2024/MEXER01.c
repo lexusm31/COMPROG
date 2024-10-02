@@ -1,22 +1,31 @@
 #include <stdio.h>
-#include <math.h>
 
 int main() {
-    int distance;
-    double fare = 20.00;
+    
+    float distance;
+    float fare = 20.00;
+    int extraMeters, increments;
+    
+    printf("Input: ");
+    scanf("%f", &distance);
+    
+    if (distance <= 300) {
+        printf("Output: P %.2f (The fare is P20.00 for the first 300 meters)\n", fare);
+    } else {
+        extraMeters = distance - 300;
+        increments = extraMeters / 200; 
+        if (extraMeters % 200 != 0) {
+            fare += increments * 2.00;
+        } else {
+            fare += increments * 2.00;
+        }
 
-    printf("Enter distance in meters: ");
-    scanf("%d", &distance);
-
-    if (distance > 300) {
-        int extra_distance = distance - 300;
-        int increments = (extra_distance + 199) / 200;
-        fare += increments * 2.00;
-        fare -= 2.00; 
-    }
-
-    printf("P %.2f\n", fare);
-
+        if (increments == 1) {
+            printf("Output: P %.2f (P 20.00 for the first 300 meters, then %d meter is charged as one increment of 200 meters)\n", fare, extraMeters);
+        } else {
+            printf("Output: P %.2f (P 20.00 for the first 300 meters, and %d meters is charged as %d increments of 200 meters)\n", fare, extraMeters, increments);
+        }
+    } 
+    
     return 0;
 }
-
