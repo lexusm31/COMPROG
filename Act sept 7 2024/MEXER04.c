@@ -1,31 +1,20 @@
 #include <stdio.h>
 
 int main() {
-  
-    int value1, value2, value3, largest_value;
+    int num1, num2, num3, largest;
 
-   
-    printf("Enter three integers: ");
-    scanf("%d %d %d", &value1, &value2, &value3);
+    printf("Enter three integers: \n");
+    scanf("%d %d %d", &num1, &num2, &num3);
 
-   
-    if (value1 >= value2) {
-        if (value1 >= value3) {
-            largest_value = value1; 
-        } else {
-            largest_value = value3; 
-        }
-    } else {
-        if (value2 >= value3) {
-            largest_value = value2; 
-        } else {
-            largest_value = value3; 
-        }
-    }
+    if (num1 > num2)
+        largest = num1;
+    else
+        largest = num2;
 
-    
-    printf("The largest number value is: %d\n", largest_value);
+    if (num3 > largest)
+        largest = num3;
+
+    printf("The largest number is: %d\n", largest);
 
     return 0;
 }
-
