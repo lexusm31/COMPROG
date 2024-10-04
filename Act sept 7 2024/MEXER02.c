@@ -1,33 +1,23 @@
 #include <stdio.h>
 
 int main() {
-    
-double weekly_sales, commission, gross_pay;
-const double regular_pay = 1000.00; 
-const double commission_rate = 0.097; 
+    float sales, commission, weeklyGrossPay;
+    float regularPay = 1000.00;
 
-    
-printf("Enter the total weekly sales in pesos: ");
-scanf("%lf", &weekly_sales);
+    printf("Enter weekly sales: ");
+    scanf("%f", &sales);
 
-    
-if (weekly_sales > 5000.00) {
-        
-   commission = weekly_sales * commission_rate;
-} else {
-        
-  commission = 250.00;
- }
+    if (sales > 5000.00) {
+        commission = sales * 0.097;
+    } else {
+        commission = 250.00;
+    }
+    weeklyGrossPay = regularPay + commission;
 
-    
- gross_pay = regular_pay + commission;
-
-    
- printf("\nRegular Pay: P%.2f", regular_pay);
- printf("\nWeekly Sales: P%.2f", weekly_sales);
- printf("\nWeekly Commission: P%.2f", commission);
- printf("\nWeekly Gross Pay: P%.2f\n", gross_pay);
+    printf("Regular Pay: %.2f\n", regularPay);
+    printf("Sales: %.2f\n", sales);
+    printf("Commission: %.2f\n", commission);
+    printf("Weekly Gross Pay: %.2f\n", weeklyGrossPay);
 
     return 0;
 }
-
